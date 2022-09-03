@@ -6,6 +6,9 @@ if(DEFINED XP_NAMESPACE)
   set(XP_MODULE_PATH ${CMAKE_MODULE_PATH})
   set(nameSpace NAMESPACE ${XP_NAMESPACE}::)
 endif()
+if(NOT DEFINED XP_INSTALL_CMAKEDIR)
+  set(XP_INSTALL_CMAKEDIR ${CMAKE_INSTALL_DATADIR}/cmake)
+endif()
 enable_testing()
 set_property(GLOBAL PROPERTY USE_FOLDERS ON) # enables MSVC Solution Folders
 ########################################
