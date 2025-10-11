@@ -60,3 +60,7 @@ libstrophe.project
 libs/
 obj/
 expat/
+# externpro
+.env
+_bld*/
+docker-compose.override.yml
