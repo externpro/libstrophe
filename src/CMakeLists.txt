@@ -1,5 +1,4 @@
 set(lib_name ${PROJECT_NAME})
-########################################
 set(${lib_name}_libsrcs
   auth.c
   common.h
@@ -52,7 +51,6 @@ set_target_properties(${lib_name} PROPERTIES
   PREFIX "" # strip off the "lib" prefix, since it's already libstrophe
   )
 ########################################
-set(targetsFile ${PROJECT_NAME}-targets)
 install(TARGETS ${lib_name} EXPORT ${targetsFile}
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
