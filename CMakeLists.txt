@@ -12,7 +12,7 @@ if(NOT DEFINED XP_INSTALL_CMAKEDIR)
   set(XP_INSTALL_CMAKEDIR ${CMAKE_INSTALL_DATADIR}/cmake)
 endif()
 set(targetsFile ${PROJECT_NAME}-targets)
-xpPackageDevel(TARGETS_FILE ${targetsFile} LIBRARIES ${lib})
+xpPackageDevel(TARGETS_FILE ${targetsFile} DEPS expat openssl LIBRARIES ${lib})
 enable_testing()
 set_property(GLOBAL PROPERTY USE_FOLDERS ON) # enables MSVC Solution Folders
 ########################################
