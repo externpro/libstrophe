@@ -46,7 +46,7 @@ add_library(${lib_name} STATIC ${${lib_name}_libsrcs})
 target_include_directories(${lib_name} PUBLIC $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
   $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}> $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
   )
-target_link_libraries(${lib_name} PRIVATE ${EXPAT_LIBRARIES} ${OPENSSL_LIBRARIES} ${SYS_LIBS})
+target_link_libraries(${lib_name} PRIVATE ${LIBEXPAT_LIBRARIES} ${OPENSSL_LIBRARIES} ${SYS_LIBS})
 set_target_properties(${lib_name} PROPERTIES
   PREFIX "" # strip off the "lib" prefix, since it's already libstrophe
   )
