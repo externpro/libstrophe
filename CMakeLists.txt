@@ -1,18 +1,16 @@
 cmake_minimum_required(VERSION 3.31)
 set(CMAKE_PROJECT_TOP_LEVEL_INCLUDES .devcontainer/cmake/xproinc.cmake)
 project(libstrophe)
-include(GNUInstallDirs)
-include(xpflags)
-set(lib ${PROJECT_NAME})
-if(DEFINED XP_NAMESPACE)
-  set(nameSpace NAMESPACE ${XP_NAMESPACE}::)
-  string(PREPEND lib "${XP_NAMESPACE}::")
-endif()
-if(NOT DEFINED XP_INSTALL_CMAKEDIR)
-  set(XP_INSTALL_CMAKEDIR ${CMAKE_INSTALL_DATADIR}/cmake)
-endif()
 set(targetsFile ${PROJECT_NAME}-targets)
-xpPackageDevel(TARGETS_FILE ${targetsFile} DEPS libexpat openssl LIBRARIES ${lib})
+if(DEFINED XP_NAMESPACE)
+  xpExternPackage(NAMESPACE ${XP_NAMESPACE}
+    TARGETS_FILE ${targetsFile} LIBRARIES ${PROJECT_NAME}
+    BASE 0.9.1 XPDIFF "intro" DEPS libexpat openssl
+    WEB "http://strophe.im/libstrophe/" UPSTREAM "github.com/strophe/libstrophe"
+    DESC "A simple, lightweight C library for writing XMPP client"
+    LICENSE "[MIT or GPL-3.0](https://github.com/strophe/libstrophe/blob/0.9.1/LICENSE.txt 'dual licensed under MIT and GPLv3 licenses')"
+    )
+endif()
 enable_testing()
 set_property(GLOBAL PROPERTY USE_FOLDERS ON) # enables MSVC Solution Folders
 ########################################
