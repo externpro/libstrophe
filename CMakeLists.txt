@@ -8,7 +8,7 @@ if(DEFINED XP_NAMESPACE)
     BASE 0.9.1 XPDIFF "intro" DEPS libexpat openssl
     WEB "http://strophe.im/libstrophe/" UPSTREAM "github.com/strophe/libstrophe"
     DESC "A simple, lightweight C library for writing XMPP client"
-    LICENSE "[MIT or GPL-3.0](https://github.com/strophe/libstrophe/blob/0.9.1/LICENSE.txt 'dual licensed under MIT and GPLv3 licenses')"
+    LICENSE "[MIT OR GPL-3.0-only](https://github.com/strophe/libstrophe/blob/0.9.1/LICENSE.txt 'dual licensed under MIT and GPLv3 licenses')"
     )
 endif()
 enable_testing()
